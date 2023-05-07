@@ -10,9 +10,7 @@ const App = () => {
 	const [neutral, setNeutral] = useState(0)
 	const [bad, setBad] = useState(0)
 
-	const countTotalFeedback = () => {
-		return good + neutral + bad
-	}
+	const countTotalFeedback = () => good + neutral + bad
 
 	const countPositiveFeedbackPercentage = () => {
 		return Math.round((good * 100) / countTotalFeedback())
@@ -22,9 +20,6 @@ const App = () => {
 		if (feedback === 'good') setGood((prevState) => prevState + 1)
 		if (feedback === 'neutral') setNeutral((prevState) => prevState + 1)
 		if (feedback === 'bad') setBad((prevState) => prevState + 1)
-		// this.setState({
-		// 	[feedback]: this.state[feedback] + 1,
-		// })
 	}
 
 	const total = countTotalFeedback()
